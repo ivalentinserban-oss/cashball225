@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Tokens: chart chrome and categorical slots follow the validated reference palette. */
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --surface-2: #f0efec;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6d68;
+  --line: #e1e0d9;
+  --axis: #c3c2b7;
+  --ring: rgba(11, 11, 11, 0.1);
+  --accent: #2a78d6;
+  --accent-ink: #1c5cab;
+  --accent-wash: #cde2fb;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --cash: #eda100;
+  --cash-ink: #0b0b0b;
+  --good: #006300;
+  --bad: #b42d2d;
+  --note-bg: #fff6e0;
+  --note-line: #f2d48a;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #252523;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --muted: #9a988f;
+  --line: #2c2c2a;
+  --axis: #383835;
+  --ring: rgba(255, 255, 255, 0.1);
+  --accent: #3987e5;
+  --accent-ink: #86b6ef;
+  --accent-wash: #1c2d44;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --cash: #c98500;
+  --cash-ink: #0b0b0b;
+  --good: #0ca30c;
+  --bad: #e66767;
+  --note-bg: #2a2412;
+  --note-line: #5c4a16;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+  --color-cash: var(--cash);
+  --color-cash-ink: var(--cash-ink);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --color-note-bg: var(--note-bg);
+  --color-note-line: var(--note-line);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Recharts focus outline is noisy on tap. */
+.recharts-wrapper *:focus {
+  outline: none;
+}
