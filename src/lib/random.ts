@@ -20,12 +20,22 @@ export interface QuickPick {
   cashBall: number;
 }
 
-/** Four distinct whites from 1–35 (sorted) and one Cash Ball from 1–25, via a partial Fisher–Yates shuffle. */
-export function quickPick(rng?: Rng): QuickPick {
-  const pool = Array.from({ length: 35 }, (_, i) => i + 1);
+const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
+
+/** Four distinct whites (sorted) from `whitePool` and one Cash Ball from `cashPool`, each uniformly at random. */
+export function pickFromPools(whitePool: readonly number[], cashPool: readonly number[], rng?: Rng): QuickPick {
+  const pool = [...new Set(whitePool)];
+  if (pool.length < 4) throw new RangeError('The white-ball pool needs at least 4 numbers');
+  if (cashPool.length === 0) throw new RangeError('The Cash Ball pool is empty');
+  // Partial Fisher–Yates shuffle: the first 4 slots end up a uniform random 4-subset.
   for (let i = 0; i < 4; i++) {
     const j = i + secureRandomInt(pool.length - i, rng);
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
-  return { whites: pool.slice(0, 4).sort((a, b) => a - b), cashBall: 1 + secureRandomInt(25, rng) };
+  return { whites: pool.slice(0, 4).sort((a, b) => a - b), cashBall: cashPool[secureRandomInt(cashPool.length, rng)] };
+}
+
+/** Four distinct whites from 1–35 (sorted) and one Cash Ball from 1–25. */
+export function quickPick(rng?: Rng): QuickPick {
+  return pickFromPools(range(35), range(25), rng);
 }

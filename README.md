@@ -4,7 +4,7 @@ A mobile-first, installable web app about the Kentucky Lottery's **Cash Ball 225
 expected value, and five years of winning numbers with frequency charts, randomness tests, a "check my numbers"
 simulator and a searchable draw history.
 
-Every draw is independent. Nothing here predicts future numbers, and the app deliberately has no "hot numbers" features.
+Every draw is independent. Nothing here predicts future numbers. The Hot numbers tab generates picks from recently frequent numbers for fun and says plainly that they have the same odds as any other ticket.
 
 ## Game rules (verified against kylottery.com, October 2026)
 
@@ -48,6 +48,7 @@ Installing as an app and offline mode need HTTPS (or localhost), so use the depl
   exposes the most recent ~180 days.
 - **lottery.net** year archives for older draws, cross-checked against the official data wherever both cover a date.
 - **lottery.net** per-draw payout pages for Kentucky winner counts per tier (used to count jackpots actually hit).
+  These breakdowns only exist from Feb 22, 2024 onward; older draws are recorded as unavailable and not refetched.
 
 Every row is validated (4 unique whites in 1–35, Cash Ball in 1–25, no duplicate or conflicting dates). Missing dates
 are listed in the file and in the app rather than skipped silently. Requests follow robots.txt and are spaced at least

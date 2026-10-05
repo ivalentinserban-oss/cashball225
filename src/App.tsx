@@ -4,13 +4,14 @@ import { OddsPage } from './pages/Odds';
 import { CheckPage } from './pages/Check';
 import { HistoryPage } from './pages/History';
 import { QuickPickPage } from './pages/QuickPick';
+import { HotNumbersPage } from './pages/HotNumbers';
 
 // Charts (Recharts) are only needed on the stats page, so they load on demand.
 const StatsPage = lazy(() => import('./pages/Stats'));
 
-type Route = 'odds' | 'stats' | 'check' | 'history' | 'pick';
+type Route = 'odds' | 'stats' | 'check' | 'history' | 'pick' | 'hot';
 
-const ROUTES: { id: Route; label: string; icon: ReactNode }[] = [
+const ROUTES: { id: Route; label: string; short?: string; icon: ReactNode }[] = [
   {
     id: 'odds',
     label: 'Odds',
@@ -22,7 +23,14 @@ const ROUTES: { id: Route; label: string; icon: ReactNode }[] = [
   {
     id: 'pick',
     label: 'Quick pick',
+    short: 'Pick',
     icon: <path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm3.5 4.5h.01m7 0h.01M12 12h.01m-3.5 3.5h.01m7 0h.01" />,
+  },
+  {
+    id: 'hot',
+    label: 'Hot numbers',
+    short: 'Hot',
+    icon: <path d="M12 21c-3.9 0-7-2.9-7-6.6 0-2.6 1.5-4.4 3-5.9.3 1.6 1.2 2.7 2.4 3.1-.3-3.3 1-6.3 3.6-8.6.3 2.6 1.7 4.4 3.1 6 1.2 1.4 1.9 3 1.9 5.2C19 18 15.9 21 12 21Z" />,
   },
 ];
 
@@ -127,6 +135,7 @@ export default function App() {
     check: <CheckPage />,
     history: <HistoryPage />,
     pick: <QuickPickPage />,
+    hot: <HotNumbersPage />,
   }[route];
 
   return (
@@ -162,7 +171,7 @@ export default function App() {
         className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur pb-[env(safe-area-inset-bottom)] md:hidden"
         aria-label="Main"
       >
-        <div className="mx-auto grid max-w-3xl grid-cols-5">
+        <div className="mx-auto grid max-w-3xl grid-cols-6">
           {ROUTES.map((r) => (
             <a
               key={r.id}
@@ -171,7 +180,7 @@ export default function App() {
               className={`flex min-h-14 flex-col items-center justify-center gap-0.5 text-[11px] font-medium ${route === r.id ? 'text-accent-ink' : 'text-muted'}`}
             >
               <Icon>{r.icon}</Icon>
-              {r.label}
+              {r.short ?? r.label}
             </a>
           ))}
         </div>
