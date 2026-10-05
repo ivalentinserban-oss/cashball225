@@ -180,7 +180,10 @@ async function fetchArchiveYear(year: number): Promise<RawRow[]> {
   return rows;
 }
 
-type PayoutEntry = { winners: number[]; ezMatch?: number; total?: number; fetchedAt: string } | { unavailable: true; fetchedAt: string };
+type PayoutEntry = { winners: number[]; ezMatch?: number; total?: number; fetchedAt: string } | { unavailable: true; fetchedAt: string; reason?: string };
+
+/** Payouts can lag the draw by a day or two; an empty table older than this is treated as permanently missing. */
+const PAYOUT_GRACE_DAYS = 7;
 
 const TIER_PATTERNS: RegExp[] = PRIZE_TIERS.map((t) => new RegExp(`^Match ${t.whites}${t.cashBall ? ' \\+ Cash Ball' : ''}$`, 'i'));
 
@@ -188,7 +191,7 @@ async function fetchPayout(date: string): Promise<PayoutEntry | null> {
   const [y, m, d] = date.split('-');
   const res = await politeFetch(`${ARCHIVE_BASE}/${m}-${d}-${y}`);
   const fetchedAt = new Date().toISOString();
-  if (res.status === 404) return { unavailable: true, fetchedAt };
+  if (res.status === 404) return { unavailable: true, fetchedAt, reason: 'page not found' };
   if (!res.ok) throw new Error(`payout page ${date} returned HTTP ${res.status}`);
   const root = parse(await res.text());
   const winners: (number | undefined)[] = new Array(PRIZE_TIERS.length).fill(undefined);
@@ -204,8 +207,12 @@ async function fetchPayout(date: string): Promise<PayoutEntry | null> {
     else if (/^EZ ?Match/i.test(cells[0])) ezMatch = count;
     else if (/^Totals?/i.test(cells[0])) total = count;
   }
-  // Payouts are sometimes posted a while after the draw; treat empty/zero tables as "not yet available".
-  if (winners.some((w) => w === undefined) || !total) return null;
+  if (winners.some((w) => w === undefined) || !total) {
+    // Recent draws may not have payouts posted yet (retry next run). lottery.net has no breakdowns for
+    // draws before Feb 22, 2024, so an old empty table is recorded once instead of refetched every night.
+    const old = date < addDays(etDate(Date.now()), -PAYOUT_GRACE_DAYS);
+    return old ? { unavailable: true, fetchedAt, reason: 'no prize breakdown published' } : null;
+  }
   return { winners: winners as number[], ezMatch, total, fetchedAt };
 }
 

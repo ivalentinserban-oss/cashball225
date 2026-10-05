@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { TierGlyph } from '../components/Ball';
 import { Card, PageHeader, StatTile } from '../components/ui';
 import { useDraws } from '../lib/data';
-import { fmtCents, fmtDate, fmtInt, fmtMoney, fmtNum, fmtOneIn, fmtPct, plural } from '../lib/format';
+import { fmtCents, fmtDate, fmtInt, fmtMoney, fmtNum, fmtOneIn, fmtPct, fmtShortDate, plural } from '../lib/format';
 import { OFFICIAL_OVERALL_ODDS, TOP_PRIZE_LIABILITY_CAP, tierLabel } from '../lib/game';
 import {
   ALL_TIER_ODDS,
@@ -189,7 +189,6 @@ function JackpotHistory() {
   const state = useDraws();
   const summary = useMemo(() => (state.status === 'ready' ? jackpotSummary(state.data.draws) : null), [state]);
   if (state.status !== 'ready') return null;
-  const { data } = state;
   if (!summary) {
     return (
       <Card title="Jackpots actually hit">
@@ -199,7 +198,7 @@ function JackpotHistory() {
   }
   const years = summary.drawsWithData / DAYS_PER_YEAR;
   return (
-    <Card title="Jackpots actually hit" subtitle={`Kentucky winner counts for ${plural(summary.drawsWithData, 'draw')} (${fmtDate(data.draws[0].date)} onward).`}>
+    <Card title="Jackpots actually hit" subtitle={`Kentucky winner counts for ${plural(summary.drawsWithData, 'draw')}, ${fmtShortDate(summary.from)} – ${fmtShortDate(summary.to)}. Per-tier counts aren't published for earlier draws.`}>
       <div className="grid grid-cols-2 gap-3">
         <StatTile label="Jackpot winners" value={fmtInt(summary.jackpotWinners)} detail={`on ${plural(summary.jackpotDraws.length, 'night')} in ${fmtNum(years, 1)} years`} />
         <StatTile label="Expected from sales" value={`≈ ${fmtNum(summary.expectedJackpots, 0)}`} detail={`from ≈ ${fmtInt(summary.estimatedPlays / summary.drawsWithData)} plays a night`} />

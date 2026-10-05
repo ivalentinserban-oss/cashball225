@@ -166,6 +166,9 @@ export const EXPECTED_MEAN_SUM = (WHITE_PICKS * (WHITE_MAX + 1)) / 2;
 
 export interface JackpotSummary {
   drawsWithData: number;
+  /** First and last draw dates that have winner counts. */
+  from: string;
+  to: string;
   jackpotWinners: number;
   jackpotDraws: { date: string; winners: number }[];
   /** Rough estimate of plays per draw, inferred from the three most common prize tiers. */
@@ -195,5 +198,5 @@ export function jackpotSummary(draws: readonly Draw[]): JackpotSummary | null {
       jackpotDraws.push({ date: d.date, winners: w[0] });
     }
   }
-  return { drawsWithData: withData.length, jackpotWinners, jackpotDraws, estimatedPlays, expectedJackpots: estimatedPlays / TOTAL_COMBOS };
+  return { drawsWithData: withData.length, from: withData[0].date, to: withData[withData.length - 1].date, jackpotWinners, jackpotDraws, estimatedPlays, expectedJackpots: estimatedPlays / TOTAL_COMBOS };
 }

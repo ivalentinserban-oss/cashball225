@@ -164,6 +164,7 @@ describe('jackpotSummary', () => {
       draw([1, 2, 3, 4], 1, '2026-01-03'),
     ])!;
     expect(s.drawsWithData).toBe(2);
+    expect([s.from, s.to]).toEqual(['2026-01-01', '2026-01-02']);
     expect(s.jackpotWinners).toBe(2);
     expect(s.jackpotDraws).toEqual([{ date: '2026-01-02', winners: 2 }]);
     const pCommon = (66_960 + 17_980 + 31_465) / 1_309_000;
