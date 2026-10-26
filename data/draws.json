@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-10-25T11:51:35.041Z",
+  "generatedAt": "2026-10-26T13:22:27.467Z",
   "window": {
-    "start": "2021-10-25",
-    "end": "2026-10-24",
+    "start": "2021-10-26",
+    "end": "2026-10-25",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -13,23 +13,22 @@
   ],
   "discrepancies": [],
   "invalidRows": [],
-  "payoutCoverage": 975,
+  "payoutCoverage": 977,
   "sources": [
     {
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 200
+      "draws": 201
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1625
+      "draws": 1624
     }
   ],
   "draws": [
-    {"date":"2021-10-25","whites":[4,5,13,35],"cashBall":8,"source":"lottery.net"},
     {"date":"2021-10-26","whites":[8,27,32,34],"cashBall":6,"source":"lottery.net"},
     {"date":"2021-10-27","whites":[11,13,26,31],"cashBall":16,"source":"lottery.net"},
     {"date":"2021-10-28","whites":[6,18,22,28],"cashBall":3,"source":"lottery.net"},
@@ -1853,6 +1852,7 @@
     {"date":"2026-10-21","whites":[8,21,24,34],"cashBall":20,"source":"kylottery.com","winners":[0,0,4,55,63,1379,374,739]},
     {"date":"2026-10-22","whites":[1,25,30,31],"cashBall":24,"source":"kylottery.com","winners":[0,0,4,53,49,1312,336,745]},
     {"date":"2026-10-23","whites":[4,12,14,19],"cashBall":7,"source":"kylottery.com","winners":[1,0,3,90,108,1791,518,795]},
-    {"date":"2026-10-24","whites":[5,24,26,27],"cashBall":5,"source":"kylottery.com"}
+    {"date":"2026-10-24","whites":[5,24,26,27],"cashBall":5,"source":"kylottery.com","winners":[0,0,5,62,62,1468,450,723]},
+    {"date":"2026-10-25","whites":[11,14,15,18],"cashBall":16,"source":"kylottery.com","winners":[0,0,3,70,49,1325,319,529]}
   ]
 }
