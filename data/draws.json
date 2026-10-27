@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-10-26T13:22:27.467Z",
+  "generatedAt": "2026-10-27T12:29:58.848Z",
   "window": {
-    "start": "2021-10-26",
-    "end": "2026-10-25",
+    "start": "2021-10-27",
+    "end": "2026-10-26",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -19,17 +19,16 @@
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 201
+      "draws": 202
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1624
+      "draws": 1623
     }
   ],
   "draws": [
-    {"date":"2021-10-26","whites":[8,27,32,34],"cashBall":6,"source":"lottery.net"},
     {"date":"2021-10-27","whites":[11,13,26,31],"cashBall":16,"source":"lottery.net"},
     {"date":"2021-10-28","whites":[6,18,22,28],"cashBall":3,"source":"lottery.net"},
     {"date":"2021-10-29","whites":[28,32,33,35],"cashBall":7,"source":"lottery.net"},
@@ -1853,6 +1852,7 @@
     {"date":"2026-10-22","whites":[1,25,30,31],"cashBall":24,"source":"kylottery.com","winners":[0,0,4,53,49,1312,336,745]},
     {"date":"2026-10-23","whites":[4,12,14,19],"cashBall":7,"source":"kylottery.com","winners":[1,0,3,90,108,1791,518,795]},
     {"date":"2026-10-24","whites":[5,24,26,27],"cashBall":5,"source":"kylottery.com","winners":[0,0,5,62,62,1468,450,723]},
-    {"date":"2026-10-25","whites":[11,14,15,18],"cashBall":16,"source":"kylottery.com","winners":[0,0,3,70,49,1325,319,529]}
+    {"date":"2026-10-25","whites":[11,14,15,18],"cashBall":16,"source":"kylottery.com","winners":[0,0,3,70,49,1325,319,529]},
+    {"date":"2026-10-26","whites":[9,16,23,33],"cashBall":23,"source":"kylottery.com"}
   ]
 }
