@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-11-15T14:09:52.577Z",
+  "generatedAt": "2026-11-16T16:11:10.048Z",
   "window": {
-    "start": "2021-11-15",
-    "end": "2026-11-14",
+    "start": "2021-11-16",
+    "end": "2026-11-15",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -13,23 +13,22 @@
   ],
   "discrepancies": [],
   "invalidRows": [],
-  "payoutCoverage": 997,
+  "payoutCoverage": 998,
   "sources": [
     {
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 221
+      "draws": 222
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1604
+      "draws": 1603
     }
   ],
   "draws": [
-    {"date":"2021-11-15","whites":[12,13,15,21],"cashBall":22,"source":"lottery.net"},
     {"date":"2021-11-16","whites":[5,16,19,28],"cashBall":10,"source":"lottery.net"},
     {"date":"2021-11-17","whites":[6,8,27,33],"cashBall":25,"source":"lottery.net"},
     {"date":"2021-11-18","whites":[9,13,27,35],"cashBall":3,"source":"lottery.net"},
@@ -1853,6 +1852,7 @@
     {"date":"2026-11-11","whites":[12,18,22,31],"cashBall":3,"source":"kylottery.com","winners":[0,0,2,71,65,1460,386,612]},
     {"date":"2026-11-12","whites":[9,16,29,31],"cashBall":22,"source":"kylottery.com","winners":[0,0,3,63,59,1372,386,675]},
     {"date":"2026-11-13","whites":[10,14,18,24],"cashBall":7,"source":"kylottery.com","winners":[0,4,4,100,72,1530,580,840]},
-    {"date":"2026-11-14","whites":[1,6,12,17],"cashBall":12,"source":"kylottery.com","winners":[0,1,4,70,68,1695,462,686]}
+    {"date":"2026-11-14","whites":[1,6,12,17],"cashBall":12,"source":"kylottery.com","winners":[0,1,4,70,68,1695,462,686]},
+    {"date":"2026-11-15","whites":[1,7,10,18],"cashBall":9,"source":"kylottery.com","winners":[0,0,4,81,57,1550,304,622]}
   ]
 }
