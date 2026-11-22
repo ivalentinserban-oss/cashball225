@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-11-21T14:49:45.276Z",
+  "generatedAt": "2026-11-22T14:45:38.237Z",
   "window": {
-    "start": "2021-11-21",
-    "end": "2026-11-20",
+    "start": "2021-11-22",
+    "end": "2026-11-21",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -13,23 +13,22 @@
   ],
   "discrepancies": [],
   "invalidRows": [],
-  "payoutCoverage": 1001,
+  "payoutCoverage": 1004,
   "sources": [
     {
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 227
+      "draws": 228
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1598
+      "draws": 1597
     }
   ],
   "draws": [
-    {"date":"2021-11-21","whites":[8,10,20,28],"cashBall":22,"source":"lottery.net"},
     {"date":"2021-11-22","whites":[2,9,15,24],"cashBall":19,"source":"lottery.net"},
     {"date":"2021-11-23","whites":[3,10,19,35],"cashBall":11,"source":"lottery.net"},
     {"date":"2021-11-24","whites":[5,6,9,26],"cashBall":19,"source":"lottery.net"},
@@ -1852,7 +1851,8 @@
     {"date":"2026-11-16","whites":[7,10,12,16],"cashBall":22,"source":"kylottery.com","winners":[0,3,4,73,79,1775,443,643]},
     {"date":"2026-11-17","whites":[16,20,21,35],"cashBall":24,"source":"kylottery.com","winners":[0,0,2,47,55,1210,357,733]},
     {"date":"2026-11-18","whites":[6,14,26,35],"cashBall":25,"source":"kylottery.com","winners":[0,1,1,57,62,1226,412,809]},
-    {"date":"2026-11-19","whites":[8,23,32,35],"cashBall":14,"source":"kylottery.com"},
-    {"date":"2026-11-20","whites":[6,11,18,23],"cashBall":7,"source":"kylottery.com"}
+    {"date":"2026-11-19","whites":[8,23,32,35],"cashBall":14,"source":"kylottery.com","winners":[0,0,3,49,54,1336,329,654]},
+    {"date":"2026-11-20","whites":[6,11,18,23],"cashBall":7,"source":"kylottery.com","winners":[0,1,6,95,75,1658,484,850]},
+    {"date":"2026-11-21","whites":[10,16,22,25],"cashBall":8,"source":"kylottery.com","winners":[0,0,3,53,68,1493,361,709]}
   ]
 }
