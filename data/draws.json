@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-11-24T17:59:55.975Z",
+  "generatedAt": "2026-11-25T17:28:12.352Z",
   "window": {
-    "start": "2021-11-24",
-    "end": "2026-11-23",
+    "start": "2021-11-25",
+    "end": "2026-11-24",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -13,23 +13,22 @@
   ],
   "discrepancies": [],
   "invalidRows": [],
-  "payoutCoverage": 1005,
+  "payoutCoverage": 1007,
   "sources": [
     {
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 230
+      "draws": 231
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1595
+      "draws": 1594
     }
   ],
   "draws": [
-    {"date":"2021-11-24","whites":[5,6,9,26],"cashBall":19,"source":"lottery.net"},
     {"date":"2021-11-25","whites":[1,6,11,12],"cashBall":12,"source":"lottery.net"},
     {"date":"2021-11-26","whites":[2,4,6,7],"cashBall":18,"source":"lottery.net"},
     {"date":"2021-11-27","whites":[6,7,16,22],"cashBall":4,"source":"lottery.net"},
@@ -1853,6 +1852,7 @@
     {"date":"2026-11-20","whites":[6,11,18,23],"cashBall":7,"source":"kylottery.com","winners":[0,1,6,95,75,1658,484,850]},
     {"date":"2026-11-21","whites":[10,16,22,25],"cashBall":8,"source":"kylottery.com","winners":[0,0,3,53,68,1493,361,709]},
     {"date":"2026-11-22","whites":[3,8,17,18],"cashBall":19,"source":"kylottery.com","winners":[0,1,9,68,81,1526,384,571]},
-    {"date":"2026-11-23","whites":[13,22,28,32],"cashBall":18,"source":"kylottery.com"}
+    {"date":"2026-11-23","whites":[13,22,28,32],"cashBall":18,"source":"kylottery.com","winners":[0,0,2,58,40,1299,352,695]},
+    {"date":"2026-11-24","whites":[1,7,23,24],"cashBall":11,"source":"kylottery.com","winners":[0,0,3,54,96,1521,424,756]}
   ]
 }
