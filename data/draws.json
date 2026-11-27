@@ -1,9 +1,9 @@
 {
   "game": "Cash Ball 225",
-  "generatedAt": "2026-11-26T17:09:29.077Z",
+  "generatedAt": "2026-11-27T16:52:23.454Z",
   "window": {
-    "start": "2021-11-26",
-    "end": "2026-11-25",
+    "start": "2021-11-27",
+    "end": "2026-11-26",
     "years": 5
   },
   "expectedDraws": 1826,
@@ -13,23 +13,22 @@
   ],
   "discrepancies": [],
   "invalidRows": [],
-  "payoutCoverage": 1007,
+  "payoutCoverage": 1009,
   "sources": [
     {
       "name": "Kentucky Lottery (official)",
       "url": "https://www.kylottery.com/apps/draw_games/pastwinning.html?game=13",
       "role": "Winning numbers for the most recent ~180 days",
-      "draws": 232
+      "draws": 233
     },
     {
       "name": "lottery.net archive",
       "url": "https://www.lottery.net/kentucky/cash-ball/numbers/<year>",
       "role": "Winning numbers older than the official 180-day window; per-draw winner counts",
-      "draws": 1593
+      "draws": 1592
     }
   ],
   "draws": [
-    {"date":"2021-11-26","whites":[2,4,6,7],"cashBall":18,"source":"lottery.net"},
     {"date":"2021-11-27","whites":[6,7,16,22],"cashBall":4,"source":"lottery.net"},
     {"date":"2021-11-28","whites":[7,18,27,34],"cashBall":15,"source":"lottery.net"},
     {"date":"2021-11-29","whites":[1,2,20,21],"cashBall":19,"source":"lottery.net"},
@@ -1853,6 +1852,7 @@
     {"date":"2026-11-22","whites":[3,8,17,18],"cashBall":19,"source":"kylottery.com","winners":[0,1,9,68,81,1526,384,571]},
     {"date":"2026-11-23","whites":[13,22,28,32],"cashBall":18,"source":"kylottery.com","winners":[0,0,2,58,40,1299,352,695]},
     {"date":"2026-11-24","whites":[1,7,23,24],"cashBall":11,"source":"kylottery.com","winners":[0,0,3,54,96,1521,424,756]},
-    {"date":"2026-11-25","whites":[1,12,24,33],"cashBall":20,"source":"kylottery.com"}
+    {"date":"2026-11-25","whites":[1,12,24,33],"cashBall":20,"source":"kylottery.com","winners":[0,1,2,60,62,1480,437,752]},
+    {"date":"2026-11-26","whites":[19,24,29,30],"cashBall":7,"source":"kylottery.com","winners":[0,0,3,42,90,1223,371,661]}
   ]
 }
